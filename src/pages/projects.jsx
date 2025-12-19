@@ -7,42 +7,46 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "organisasi kampus",
+      title: "Organisasi Kampus",
       description: "Aktif dalam organisasi kampus dan kegiatan himpunan mahasiswa.",
       image: organisai,
     },
     {
       id: 2,
-      title: "kepanitiaan",
-      description: "terlibat dalam berbagai kegiatan kepanitiaan kampus.",
+      title: "Kepanitiaan",
+      description: "Terlibat dalam berbagai kegiatan kepanitiaan kampus.",
       image: panitia,
     },
     {
       id: 3,
-      title: "panitia proker",
-      description: "aktif dalam kepantiaan organisasi",
+      title: "Panitia Proker",
+      description: "Aktif dalam kepantiaan organisasi.",
       image: proker,
     },
   ]
 
   return (
-    <section className="py-16 px-6">
-      <h1 className="text-3xl font-semibold text-pink-700 text-center">
-        Projects
-      </h1>
-      <p className="mt-4 text-gray-600 text-center">
-        Beberapa pengalaman saya selama berkuliah
-      </p>
+    <section className="py-16 px-4 min-h-[calc(100vh-60px)] bg-gray-50">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-pink-700 mb-4">
+            My Projects
+          </h1>
+          <p className="text-gray-600 text-lg">
+            Beberapa pengalaman saya selama berkuliah
+          </p>
+        </div>
 
-      <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            image={project.image}
-            title={project.title}
-            description={project.description}
-          />
-        ))}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )

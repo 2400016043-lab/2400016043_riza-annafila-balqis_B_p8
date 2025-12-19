@@ -1,7 +1,22 @@
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/2400016043_riza-annafila-balqis_B_p8/',
+  plugins: [react(), tailwindcss()],
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  server: {
+    host: true,
+    port: 5173
+  }
 })
